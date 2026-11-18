@@ -1,85 +1,12 @@
-
 <!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DeskFlow, prototype pédagogique de gestion des demandes de support informatique.">
-  <title>DeskFlow — Démonstrateur support IT</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="DeskFlow, prototype pédagogique de gestion des demandes de support informatique."><title>DeskFlow — Démonstrateur support IT</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header>
-  <a class="brand" href="../index.html">BM<span>.</span></a>
-  <div>
-    <span class="eyebrow">PROJET PERSONNEL · DÉMONSTRATEUR</span>
-    <h1>Desk<span>Flow</span></h1>
-    <p>Gestion des demandes & incidents informatiques</p>
-  </div>
-  <a class="back" href="../index.html#projets">← Retour au portfolio</a>
-</header>
+<header><a class="brand" href="../index.html">BM<span>.</span></a><div><span class="eyebrow">PROJET PERSONNEL · DÉMONSTRATEUR</span><h1>Desk<span>Flow</span></h1><p>Gestion des demandes & incidents informatiques</p></div><a class="back" href="https://bachirm.github.io/#projets">← Retour au portfolio</a></header>
 <main>
-  <section class="intro">
-    <div>
-      <span class="kicker">ENVIRONNEMENT DE SUPPORT · N1 / N2</span>
-      <h2>Un suivi clair.<br><em>Un support efficace.</em></h2>
-      <p>Prototype front-end conçu pour illustrer un processus simple de prise en charge des demandes : enregistrer, prioriser, suivre et clôturer les tickets.</p>
-    </div>
-    <div class="stats">
-      <article><small>Tickets visibles</small><strong id="total">0</strong></article>
-      <article><small>En cours</small><strong id="active">0</strong></article>
-      <article><small>Résolus</small><strong id="resolved">0</strong></article>
-    </div>
-  </section>
-  <section class="toolbar">
-    <div><label for="search">Rechercher</label><input id="search" placeholder="N° ticket, demandeur, sujet…"></div>
-    <div><label for="filter">Statut</label><select id="filter"><option value="all">Tous les statuts</option><option>Nouveau</option><option>En cours</option><option>Résolu</option></select></div>
-    <button id="newBtn">＋ Nouveau ticket</button>
-  </section>
-  <section class="workspace">
-    <div class="table-wrap">
-      <div class="table-title">
-        <div><span class="kicker">CENTRE DE SERVICE</span><h3>File des demandes</h3></div>
-        <span class="demo">DONNÉES FICTIVES</span>
-      </div>
-      <table>
-        <thead><tr><th>Ticket</th><th>Demandeur</th><th>Demande</th><th>Priorité</th><th>Statut</th></tr></thead>
-        <tbody id="tickets"></tbody>
-      </table>
-      <p id="empty" hidden>Aucun ticket ne correspond à la recherche.</p>
-    </div>
-    <aside class="detail" id="detail">
-      <span class="kicker">DÉTAIL DU TICKET</span>
-      <h3>Sélectionnez une demande</h3>
-      <p>Les informations du ticket sélectionné apparaîtront ici.</p>
-    </aside>
-  </section>
-  <section class="note">
-    <strong>À propos du projet</strong>
-    <p>DeskFlow est un prototype pédagogique personnel. Les noms, demandes et statistiques affichés sont fictifs. Cette démonstration fonctionne dans le navigateur, sans serveur, sans compte utilisateur et sans connexion à GLPI ou à un outil professionnel. Les modifications effectuées pendant la session ne constituent pas un système de ticketing de production.</p>
-    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Support N1/N2</span><span>Gestion des incidents</span></div>
-  </section>
+<section class="intro"><div><span class="kicker">ENVIRONNEMENT DE SUPPORT · N1 / N2</span><h2>Un suivi clair.<br><em>Un support efficace.</em></h2><p>Prototype front-end conçu pour illustrer un processus simple de prise en charge des demandes : enregistrer, prioriser, suivre et clôturer les tickets.</p></div><div class="stats"><article><small>Tickets visibles</small><strong id="total">0</strong></article><article><small>En cours</small><strong id="active">0</strong></article><article><small>Résolus</small><strong id="resolved">0</strong></article></div></section>
+<section class="toolbar"><div><label for="search">Rechercher</label><input id="search" placeholder="N° ticket, demandeur, sujet…"></div><div><label for="filter">Statut</label><select id="filter"><option value="all">Tous les statuts</option><option>Nouveau</option><option>En cours</option><option>Résolu</option></select></div><button id="newBtn">＋ Nouveau ticket</button></section>
+<section class="workspace"><div class="table-wrap"><div class="table-title"><div><span class="kicker">CENTRE DE SERVICE</span><h3>File des demandes</h3></div><span class="demo">DONNÉES FICTIVES</span></div><table><thead><tr><th>Ticket</th><th>Demandeur</th><th>Demande</th><th>Priorité</th><th>Statut</th></tr></thead><tbody id="tickets"></tbody></table><p id="empty" hidden>Aucun ticket ne correspond à la recherche.</p></div><aside class="detail" id="detail"><span class="kicker">DÉTAIL DU TICKET</span><h3>Sélectionnez une demande</h3><p>Les informations du ticket sélectionné apparaîtront ici.</p></aside></section>
+<section class="note"><strong>À propos du projet</strong><p>DeskFlow est un prototype pédagogique personnel. Les noms, demandes et statistiques affichés sont fictifs. Cette démonstration fonctionne dans le navigateur, sans serveur, sans compte utilisateur et sans connexion à GLPI ou à un outil professionnel. Les modifications effectuées pendant la session ne constituent pas un système de ticketing de production.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Support N1/N2</span><span>Gestion des incidents</span></div></section>
 </main>
-<dialog id="modal">
-  <form id="ticketForm" method="dialog">
-    <div class="modal-head">
-      <div><span class="kicker">NOUVELLE DEMANDE</span><h3>Créer un ticket</h3></div>
-      <button type="button" class="close" id="close">×</button>
-    </div>
-    <label for="requester">Nom du demandeur</label>
-    <input id="requester" required maxlength="50" placeholder="Ex. Alex Martin">
-    <label for="subject">Objet de la demande</label>
-    <input id="subject" required maxlength="90" placeholder="Ex. Accès à la messagerie">
-    <label for="description">Description</label>
-    <textarea id="description" required maxlength="500" rows="4" placeholder="Décrivez le problème rencontré…"></textarea>
-    <div class="form-row">
-      <div><label for="priority">Priorité</label><select id="priority"><option>Normale</option><option>Haute</option><option>Critique</option><option>Basse</option></select></div>
-      <div><label for="category">Catégorie</label><select id="category"><option>Compte & accès</option><option>Poste de travail</option><option>Logiciel</option><option>Réseau</option><option>Bureautique</option><option>Autre</option></select></div>
-    </div>
-    <button class="submit" type="submit">Enregistrer le ticket</button>
-  </form>
-</dialog>
-<footer>DeskFlow · Prototype de démonstration · Bachir Mbacke</footer>
-<script src="app.js"></script>
-</body>
-</html>
+<dialog id="modal"><form id="ticketForm" method="dialog"><div class="modal-head"><div><span class="kicker">NOUVELLE DEMANDE</span><h3>Créer un ticket</h3></div><button type="button" class="close" id="close">×</button></div><label for="requester">Nom du demandeur</label><input id="requester" required maxlength="50" placeholder="Ex. Alex Martin"><label for="subject">Objet de la demande</label><input id="subject" required maxlength="90" placeholder="Ex. Accès à la messagerie"><label for="description">Description</label><textarea id="description" required maxlength="500" rows="4" placeholder="Décrivez le problème rencontré…"></textarea><div class="form-row"><div><label for="priority">Priorité</label><select id="priority"><option>Normale</option><option>Haute</option><option>Critique</option><option>Basse</option></select></div><div><label for="category">Catégorie</label><select id="category"><option>Compte & accès</option><option>Poste de travail</option><option>Logiciel</option><option>Réseau</option><option>Bureautique</option><option>Autre</option></select></div></div><button class="submit" type="submit">Enregistrer le ticket</button></form></dialog>
+<footer>DeskFlow · Prototype de démonstration · Bachir Mbacke</footer><script src="app.js"></script></body></html>
