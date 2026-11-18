@@ -1,0 +1,27 @@
+PORTFOLIO DE BACHIR MBACKE — VERSION À PUBLIER SUR GITHUB PAGES
+
+IMPORTANT : cette archive est organisée pour que son CONTENU soit placé directement
+à la racine du dépôt GitHub BachirM/bachirm.github.io.
+
+ÉTAPES :
+1. Décompresser cette archive sur votre ordinateur.
+2. Ouvrir le dossier extrait.
+3. Sélectionner TOUS les éléments qu'il contient (index.html, style.css, script.js,
+   portrait.png, deskflow, documents, etc.).
+4. Les glisser dans la page "Add files" du dépôt :
+   https://github.com/BachirM/bachirm.github.io
+5. Valider avec "Commit changes".
+
+NE PAS déposer le fichier ZIP lui-même.
+NE PAS déposer le dossier parent qui contient les fichiers : déposer son CONTENU.
+Ne pas supprimer les fichiers déjà présents avant d'avoir vérifié le contenu.
+
+Après publication :
+- Portfolio : https://bachirm.github.io/
+- Démonstration DeskFlow : https://bachirm.github.io/deskflow/
+
+Le lien « Retour au portfolio » de DeskFlow a été corrigé pour pointer directement
+vers https://bachirm.github.io/#projets.
+
+DeskFlow est une démonstration front-end avec des données fictives. Les changements
+sont temporaires dans le navigateur et ne constituent pas un système de production.
