@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17243a">
+<title>ClientFlow — Espace support client</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">C</span><span>Client<span class="accent">Flow</span><small>ESPACE SUPPORT CLIENT</small></span></a>
+  <div class="top-actions"><span class="online"><i></i> Espace de démonstration</span><button class="avatar" title="Profil">BM</button></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="side-label">ESPACE DE TRAVAIL</div>
+    <button class="nav active" data-view="overview">▦ <span>Vue d’ensemble</span></button>
+    <button class="nav" data-view="clients">♙ <span>Clients</span></button>
+    <button class="nav" data-view="interactions">☷ <span>Interactions</span></button>
+    <button class="nav" data-view="followups">◷ <span>Suivis à effectuer</span><b id="todoBadge">3</b></button>
+    <div class="side-label second">OUTILS</div>
+    <button class="nav" data-view="messages">✉ <span>Réponses types</span></button>
+    <div class="side-note"><strong>Le bon réflexe</strong><p>Écouter, comprendre la demande, informer clairement et assurer le suivi jusqu’au retour au client.</p></div>
+    <div class="side-foot">CLIENTFLOW · PROTOTYPE PERSONNEL</div>
+  </aside>
+  <main class="main">
+    <section class="view active" id="overview">
+      <div class="welcome"><div><div class="eyebrow">MARDI · ESPACE DE TRAVAIL</div><h1>Bonjour, Bachir.</h1><p>Voici les demandes et suivis à traiter aujourd’hui.</p></div><button class="primary" data-open="interactionModal">＋ Nouvelle interaction</button></div>
+      <div class="stats">
+        <article><span>Demandes reçues</span><strong id="statTotal">18</strong><small>Sur les 7 derniers jours</small></article>
+        <article><span>En attente de réponse</span><strong id="statWaiting">4</strong><small>Une action est nécessaire</small></article>
+        <article><span>Suivis du jour</span><strong id="statFollow">3</strong><small>À ne pas oublier</small></article>
+        <article><span>Clients accompagnés</span><strong id="statClients">12</strong><small>Dans la démonstration</small></article>
+      </div>
+      <div class="grid-two">
+        <section class="panel">
+          <div class="panel-head"><div><div class="eyebrow">À TRAITER</div><h2>Dernières interactions</h2></div><button class="text-btn" data-goto="interactions">Tout voir →</button></div>
+          <div id="recentList" class="interaction-list"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><div><div class="eyebrow">ORGANISATION</div><h2>Mes suivis</h2></div><button class="text-btn" data-goto="followups">Voir tout →</button></div>
+          <div id="overviewTasks" class="task-list"></div>
+        </section>
+      </div>
+      <section class="panel quick-panel"><div><div class="eyebrow">RAPPEL MÉTIER</div><h2>Une bonne expérience client ne se limite pas à résoudre un problème.</h2><p>Accueillir, renseigner, orienter, expliquer une démarche, prendre note d’une demande, transmettre au bon interlocuteur et tenir le client informé font aussi partie du support.</p></div><div class="quick-tags"><span>Écoute active</span><span>Clarté</span><span>Suivi</span><span>Coordination</span></div></section>
+    </section>
+
+    <section class="view" id="clients">
+      <div class="page-head"><div><div class="eyebrow">RELATION CLIENT</div><h1>Répertoire clients</h1><p>Retrouvez les coordonnées et l’historique de chaque client.</p></div><button class="primary" data-open="clientModal">＋ Ajouter un client</button></div>
+      <div class="toolbar"><input id="clientSearch" placeholder="Rechercher un nom, une entreprise, un e-mail…"><span id="clientCount" class="muted"></span></div>
+      <div class="panel table-panel"><table><thead><tr><th>CLIENT</th><th>CONTACT</th><th>CANAL PRÉFÉRÉ</th><th>DERNIER ÉCHANGE</th><th>STATUT</th></tr></thead><tbody id="clientRows"></tbody></table></div>
+    </section>
+
+    <section class="view" id="interactions">
+      <div class="page-head"><div><div class="eyebrow">ACCUEIL & ACCOMPAGNEMENT</div><h1>Journal des interactions</h1><p>Centralisez appels, e-mails, chats, demandes d’information et réclamations.</p></div><button class="primary" data-open="interactionModal">＋ Nouvelle interaction</button></div>
+      <div class="toolbar"><input id="interactionSearch" placeholder="Rechercher un client, un sujet…"><select id="typeFilter"><option value="">Tous les types</option><option>Information</option><option>Demande administrative</option><option>Réclamation</option><option>Assistance</option><option>Suivi</option></select><select id="statusFilter"><option value="">Tous les statuts</option><option>À traiter</option><option>En cours</option><option>En attente</option><option>Terminé</option></select></div>
+      <div class="panel table-panel"><table><thead><tr><th>DATE</th><th>CLIENT / SUJET</th><th>CANAL</th><th>TYPE</th><th>STATUT</th></tr></thead><tbody id="interactionRows"></tbody></table></div>
+    </section>
+
+    <section class="view" id="followups">
+      <div class="page-head"><div><div class="eyebrow">ORGANISATION PERSONNELLE</div><h1>Suivis à effectuer</h1><p>Ne laissez aucune demande sans retour ni prochaine étape.</p></div></div>
+      <div class="panel"><div class="task-list full" id="allTasks"></div></div>
+    </section>
+
+    <section class="view" id="messages">
+      <div class="page-head"><div><div class="eyebrow">COMMUNICATION</div><h1>Réponses types</h1><p>Des formulations professionnelles à adapter à chaque situation.</p></div></div>
+      <div class="template-grid" id="templates"></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="interactionModal">
+<form id="interactionForm">
+  <div class="modal-head"><div><div class="eyebrow">NOUVELLE ENTRÉE</div><h2>Enregistrer une interaction</h2></div><button type="button" class="icon-btn" data-close>×</button></div>
+  <div class="form-grid">
+    <label>Client<select id="iClient" required></select></label>
+    <label>Canal<select id="iChannel"><option>Téléphone</option><option>E-mail</option><option>Chat</option><option>En personne</option><option>Courrier</option></select></label>
+    <label>Type de demande<select id="iType"><option>Information</option><option>Demande administrative</option><option>Réclamation</option><option>Assistance</option><option>Suivi</option></select></label>
+    <label>Statut<select id="iStatus"><option>À traiter</option><option>En cours</option><option>En attente</option><option>Terminé</option></select></label>
+    <label class="wide">Sujet<input id="iSubject" required placeholder="Ex. Demande d’information sur une facture"></label>
+    <label class="wide">Résumé de l’échange<textarea id="iSummary" rows="3" placeholder="Besoin exprimé, informations communiquées, engagement pris…"></textarea></label>
+    <label class="wide">Prochaine étape / suivi<input id="iNext" placeholder="Ex. Rappeler le client après vérification"></label>
+  </div>
+  <div class="modal-actions"><button type="button" class="secondary" data-close>Annuler</button><button class="primary" type="submit">Enregistrer l’interaction</button></div>
+</form>
+</dialog>
+
+<dialog id="clientModal">
+<form id="clientForm">
+  <div class="modal-head"><div><div class="eyebrow">NOUVEAU CONTACT</div><h2>Ajouter un client</h2></div><button type="button" class="icon-btn" data-close>×</button></div>
+  <div class="form-grid">
+    <label>Nom complet<input id="cName" required></label><label>Entreprise<input id="cCompany"></label>
+    <label>E-mail<input id="cEmail" type="email"></label><label>Téléphone<input id="cPhone"></label>
+    <label>Canal préféré<select id="cChannel"><option>Téléphone</option><option>E-mail</option><option>Chat</option></select></label>
+    <label>Note utile<input id="cNote" placeholder="Préférence de contact, contexte…"></label>
+  </div>
+  <div class="modal-actions"><button type="button" class="secondary" data-close>Annuler</button><button class="primary">Ajouter le client</button></div>
+</form>
+</dialog>
+<div class="toast" id="toast"></div>
+<footer>ClientFlow · Démonstrateur pédagogique · Toutes les données affichées sont fictives.</footer>
+<script src="app.js"></script>
+</body></html>
