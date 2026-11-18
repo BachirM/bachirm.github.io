@@ -9,3 +9,6 @@ Téléverser le contenu de ce dossier à la racine du dépôt `bachirm.github.io
 La rubrique « Mon dossier de candidature » propose des copies publiques de CV, attestations, diplômes et attestation HEG. Les copies téléchargeables ont été préparées avec masquage de données personnelles identifiantes.
 
 Les documents originaux ne sont pas inclus dans ce paquet.
+
+## Projet interactif : DeskFlow
+Ouvrir `deskflow/index.html` pour tester le prototype de gestion de tickets. Il s'agit d'une démonstration front-end avec données fictives, sans backend, sans persistance et sans connexion à GLPI ou à un système de production.
