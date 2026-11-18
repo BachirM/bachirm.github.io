@@ -34,3 +34,16 @@ body.dark-mode .document-card{background:#203149}
 .project-disclaimer{display:block;margin-top:14px;color:var(--muted);font-size:10px}
 body.dark-mode .projects-section{background:#17263a}
 @media(max-width:750px){.project-feature{grid-template-columns:1fr;gap:28px}.project-visual{min-height:270px}.projects-section{padding-top:80px;padding-bottom:85px}}
+
+.talents-section{padding-top:115px;padding-bottom:125px;background:#f1f0ea}
+.talent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:45px}
+.talent-card{background:#fff;border:1px solid var(--line);padding:25px;min-height:190px}
+.talent-card>span{font:10px 'Courier New',monospace;color:#7898bd;letter-spacing:1px}
+.talent-card h3{font-size:17px;margin:22px 0 9px}
+.talent-card p{font-size:12px;color:var(--muted);margin:0}
+.talents-note{font-size:10px;color:var(--muted);margin-top:20px;max-width:850px}
+.linkedin-contact{margin-left:18px}
+body.dark-mode .talents-section{background:#17263a}
+body.dark-mode .talent-card{background:#203149}
+@media(max-width:800px){.talent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.talent-grid{grid-template-columns:1fr}.talent-card{min-height:0}.linkedin-contact{margin:14px 0 0}}

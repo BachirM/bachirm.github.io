@@ -12,3 +12,7 @@ Les documents originaux ne sont pas inclus dans ce paquet.
 
 ## Projet interactif : DeskFlow
 Ouvrir `deskflow/index.html` pour tester le prototype de gestion de tickets. Il s'agit d'une démonstration front-end avec données fictives, sans backend, sans persistance et sans connexion à GLPI ou à un système de production.
+
+## Profil LinkedIn et talents
+Le portfolio contient un lien vers le profil LinkedIn public de Bachir Mbacke. La rubrique « Talents & qualités » présente une synthèse professionnelle déduite des missions et expériences décrites dans le CV et le portfolio ; elle ne prétend pas être une évaluation formelle.
+La photo de profil utilise le portrait fourni par Bachir.
